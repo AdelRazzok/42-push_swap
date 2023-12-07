@@ -11,6 +11,7 @@
 # Executables
 *.out
 *.exe
+push_swap
 
 # Temp files
 *.swp
