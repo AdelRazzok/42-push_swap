@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:40:00 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/08 18:43:55 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/09 00:27:06 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,13 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }						t_stack_node;
 
-// Handle errors
+// stack_init.c
+void	init_stack_a(t_stack_node **a, char **argv);
 
-// Stack init
+// stack_utils.c
+bool    stack_sorted(t_stack_node *stack);
 
-// Nodes init
-
-// Stack utils
-
-// Algorithms
+// stack_three.c
+void    sort_three(t_stack_node **a);
 
 #endif
