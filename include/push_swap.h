@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:40:00 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/07 22:32:14 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/08 18:43:55 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,23 @@
 typedef struct s_stack_node
 {
 	int					value;
-	int					current_position;
-	int					final_index;
-	int					push_price;
+	int					index;
+	int					push_cost;
 	bool				above_median;
 	bool				cheapset;
 	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }						t_stack_node;
+
+// Handle errors
+
+// Stack init
+
+// Nodes init
+
+// Stack utils
+
+// Algorithms
 
 #endif
