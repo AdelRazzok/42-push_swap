@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:57:08 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/11 12:32:31 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:51:31 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,27 @@ void	init_stack_a(t_stack_node **a, char **argv)
 			free_errors(a);
 		append_node(a, (int)n);
 		i++;
+	}
+}
+
+void	prep_for_push(t_stack_node **stack, t_stack_node *top_node,
+		char stack_name)
+{
+	while (*stack != top_node)
+	{
+		if (stack_name == 'a')
+		{
+			if (top_node->above_median)
+				ra(stack, false);
+			else
+				rra(stack, false);
+		}
+		else if (stack_name == 'b')
+		{
+			if (top_node->above_median)
+				rb(stack, false);
+			else
+				rrb(stack, false);
+		}
 	}
 }

@@ -10,7 +10,7 @@ LIBFT         = $(LIBFT_DIR)libft.a
 CC            = gcc
 CFLAGS        = -Wall -Wextra -Werror
 
-SRC_FILES     = main stack_init stack_utils
+SRC_FILES     = main stack_init stack_utils sort_three sort_stack init_a_to_b rotate
 
 SRC           = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ           = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

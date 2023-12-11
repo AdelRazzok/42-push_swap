@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:05:19 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/11 13:07:03 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/11 13:25:06 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,16 @@ void	set_cheapest(t_stack_node *stack)
 	if (!stack)
 		return ;
 	cheapest_value = LONG_MAX;
-    while (stack)
-    {
-        if (stack->push_cost < cheapest_value)
-        {
-            cheapest_value = stack->push_cost;
-            cheapest_node = stack;
-        }
-        stack = stack->next;
-    }
-    cheapest_node->cheapset = true;
+	while (stack)
+	{
+		if (stack->push_cost < cheapest_value)
+		{
+			cheapest_value = stack->push_cost;
+			cheapest_node = stack;
+		}
+		stack = stack->next;
+	}
+	cheapest_node->cheapset = true;
 }
 
 void	init_nodes_a(t_stack_node *a, t_stack_node *b)
