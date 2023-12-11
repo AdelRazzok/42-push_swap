@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:57:08 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/08 19:58:32 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/11 12:32:31 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,20 @@ static void	append_node(t_stack_node **stack, int n)
 
 void	init_stack_a(t_stack_node **a, char **argv)
 {
-    long    n;
-    int     i;
+	long	n;
+	int		i;
 
-    i = 0;
-    while (argv[i])
-    {
-        if (error_syntax(argv[i]))
-            free_errors(a);
-        n = ft_atol(argv[i]);
-        if (n < INT_MIN || n > INT_MAX)
-            free_errors(a);
-        if (error_duplicate(*a, (int)n));
-            free_errors(a);
-        append_node(a, (int)n);
-        i++;
-    }
+	i = 0;
+	while (argv[i])
+	{
+		if (error_syntax(argv[i]))
+			free_errors(a);
+		n = ft_atol(argv[i]);
+		if (n < INT_MIN || n > INT_MAX)
+			free_errors(a);
+		if (error_duplicate(*a, (int)n))
+			free_errors(a);
+		append_node(a, (int)n);
+		i++;
+	}
 }

@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 17:59:06 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/11 12:32:40 by arazzok          ###   ########.fr       */
+/*   Created: 2023/12/09 01:00:29 by arazzok           #+#    #+#             */
+/*   Updated: 2023/12/11 12:21:31 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	int	a_len;
 
-	a = NULL;
-	b = NULL;
-	if (argc < 3)
+	a_len = stack_len(*a);
+	if (a_len-- > 3 && !stack_sorted(*a))
+		pb(b, a, false);
+	if (a_len-- > 3 && !stack_sorted(*a))
+		pb(b, a, false);
+	while (a_len-- > 3 && !stack_sorted(*a))
 	{
-		ft_putstr_fd("Error\n", STDERR_FILENO);
-		return (1);
+		init_nodes_a(*a, *b);
+		move_a_to_b(a, b);
 	}
-	init_stack_a(&a, argv + 1);
-	if (!stack_sorted(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
-		else
-			sort_stacks(&a, &b);
-	}
-	free_stack(&a);
-	return (0);
 }
