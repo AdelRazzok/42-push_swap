@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:40:00 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/11 14:04:25 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/12 02:35:54 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_stack_node
 
 // stack_init.c
 void					init_stack_a(t_stack_node **a, char **argv);
+void					prep_for_push(t_stack_node **stack,
+							t_stack_node *top_node, char stack_name);
 
 // stack_utils.c
 bool					stack_sorted(t_stack_node *stack);
@@ -52,6 +54,15 @@ void					sort_stacks(t_stack_node **a, t_stack_node **b);
 void					current_index(t_stack_node *stack);
 void					set_cheapest(t_stack_node *stack);
 void					init_nodes_a(t_stack_node *a, t_stack_node *b);
+
+// init_b_to_a.c
+void					init_nodes_b(t_stack_node *a, t_stack_node *b);
+
+// error_handler.c
+int						error_syntax(char *str);
+int						error_duplicate(t_stack_node *a, int n);
+void					free_stack(t_stack_node **stack);
+void					free_errors(t_stack_node **a);
 
 // rotate.c
 void					rotate_both(t_stack_node **a, t_stack_node **b,
