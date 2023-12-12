@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:40:00 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/12 02:35:54 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/12 03:31:21 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,11 @@ void					free_stack(t_stack_node **stack);
 void					free_errors(t_stack_node **a);
 
 // rotate.c
+static void				rotate(t_stack_node **stack);
+void					ra(t_stack_node **a, bool print);
+void					rb(t_stack_node **b, bool print);
+void					rr(t_stack_node **a, t_stack_node **b, bool print);
 void					rotate_both(t_stack_node **a, t_stack_node **b,
 							t_stack_node *cheapest_node);
-void					rr(t_stack_node **a, t_stack_node **b, bool print);
 
 #endif
