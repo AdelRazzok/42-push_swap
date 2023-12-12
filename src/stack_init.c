@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:57:08 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/11 13:51:31 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/12 02:44:57 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,17 @@ void	prep_for_push(t_stack_node **stack, t_stack_node *top_node,
 				rrb(stack, false);
 		}
 	}
+}
+
+t_stack_node	*get_cheapest(t_stack_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapset)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }
