@@ -12,7 +12,7 @@ CC            = gcc
 CFLAGS        = -Wall -Wextra -Werror
 
 SRC_FILES     = main stack_init stack_utils sort_three sort_stack init_a_to_b init_b_to_a error_handler
-CMD_FILES     = rotate rev_rotate
+CMD_FILES     = push rotate rev_rotate
 SRC_FILES    += $(addprefix $(CMD_DIR), $(CMD_FILES))
 
 SRC           = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))

@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:40:00 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/14 17:32:32 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/14 17:37:02 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ int						error_duplicate(t_stack_node *a, int n);
 void					free_stack(t_stack_node **stack);
 void					free_errors(t_stack_node **a);
 
+// push.c
+
+
 // rotate.c
 void					ra(t_stack_node **a, bool print);
 void					rb(t_stack_node **b, bool print);
@@ -75,7 +78,5 @@ void					rotate_both(t_stack_node **a, t_stack_node **b,
 void					rra(t_stack_node **a, bool print);
 void					rrb(t_stack_node **b, bool print);
 void					rrr(t_stack_node **a, t_stack_node **b, bool print);
-
-
 
 #endif
