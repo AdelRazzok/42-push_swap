@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:57:08 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/12 02:44:57 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/15 03:27:30 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	append_node(t_stack_node **stack, int n)
 	}
 }
 
-void	init_stack_a(t_stack_node **a, char **argv)
+void	init_stack_a(t_stack_node **a, char **argv, bool is_split)
 {
 	long	n;
 	int		i;
@@ -66,15 +66,17 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	while (argv[i])
 	{
 		if (error_syntax(argv[i]))
-			free_errors(a);
+			free_errors(a, argv, is_split);
 		n = ft_atol(argv[i]);
 		if (n < INT_MIN || n > INT_MAX)
-			free_errors(a);
+			free_errors(a, argv, is_split);
 		if (error_duplicate(*a, (int)n))
-			free_errors(a);
+			free_errors(a, argv, is_split);
 		append_node(a, (int)n);
 		i++;
 	}
+    if (is_split)
+        free_split(argv);
 }
 
 void	prep_for_push(t_stack_node **stack, t_stack_node *top_node,

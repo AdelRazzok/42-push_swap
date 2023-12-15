@@ -21,3 +21,7 @@ push_swap
 
 # Visual Studio Code files
 .vscode
+
+# Test files
+checker_linux
+tester

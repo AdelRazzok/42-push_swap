@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:59:06 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/11 12:32:40 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/15 03:29:35 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc < 3)
-	{
-		ft_putstr_fd("Error\n", STDERR_FILENO);
-		return (1);
-	}
-	init_stack_a(&a, argv + 1);
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
+		return (ft_putstr_fd("Error\n", STDERR_FILENO), 1);
+	else if (argc == 2)
+		argv = split(argv[1], ' ');
+	init_stack_a(&a, argv + 1, argc == 2);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)

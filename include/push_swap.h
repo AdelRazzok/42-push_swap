@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:40:00 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/14 18:41:47 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/15 03:29:27 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,12 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }						t_stack_node;
 
+// split.c
+char					**split(char *s, char c);
+
 // stack_init.c
-void					init_stack_a(t_stack_node **a, char **argv);
+void					init_stack_a(t_stack_node **a, char **argv,
+							bool is_split);
 void					prep_for_push(t_stack_node **stack,
 							t_stack_node *top_node, char stack_name);
 t_stack_node			*get_cheapest(t_stack_node *stack);
@@ -63,7 +67,9 @@ void					init_nodes_b(t_stack_node *a, t_stack_node *b);
 int						error_syntax(char *str);
 int						error_duplicate(t_stack_node *a, int n);
 void					free_stack(t_stack_node **stack);
-void					free_errors(t_stack_node **a);
+void					free_split(char **splitted);
+int						free_errors(t_stack_node **a, char **splitted,
+							bool is_split);
 
 // push.c
 void					pa(t_stack_node **a, t_stack_node **b, bool print);

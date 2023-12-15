@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 01:52:18 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/12 02:45:14 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/15 03:32:24 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,23 @@ void	free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
-void	free_errors(t_stack_node **a)
+void	free_split(char **splitted)
+{
+	int	i;
+
+	if (!splitted)
+		return ;
+	i = -1;
+	while (splitted[i])
+		free(splitted[i++]);
+	free(splitted - 1);
+}
+
+int	free_errors(t_stack_node **a, char **splitted, bool is_split)
 {
 	free_stack(a);
+	if (is_split)
+		free_split(splitted);
 	ft_putstr_fd("Error\n", STDERR_FILENO);
-	exit(1);
+	exit (1);
 }
