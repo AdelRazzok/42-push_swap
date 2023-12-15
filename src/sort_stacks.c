@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 01:00:29 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/11 13:50:33 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/15 01:07:40 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		&& !(cheapest_node->target_node->above_median))
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
-	prep_for_push(b, cheapest_node, 'b');
+	prep_for_push(b, cheapest_node->target_node, 'b');
 	pb(b, a, false);
 }
 

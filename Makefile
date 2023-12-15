@@ -11,7 +11,7 @@ LIBFT         = $(LIBFT_DIR)libft.a
 CC            = gcc
 CFLAGS        = -Wall -Wextra -Werror
 
-SRC_FILES     = main stack_init stack_utils sort_three sort_stack init_a_to_b init_b_to_a error_handler
+SRC_FILES     = main stack_init stack_utils sort_three sort_stacks init_a_to_b init_b_to_a error_handler
 CMD_FILES     = push swap rotate rev_rotate
 SRC_FILES    += $(addprefix $(CMD_DIR), $(CMD_FILES))
 
@@ -38,6 +38,7 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJ_CACHE)
 
 $(OBJ_CACHE):
 					@mkdir -p $(OBJ_DIR)
+					@mkdir -p $(OBJ_DIR)$(CMD_DIR)
 
 clean:
 					@rm -rf $(OBJ_DIR)

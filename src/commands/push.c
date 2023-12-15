@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:37:21 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/14 17:48:28 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/15 01:03:16 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 		*dst = push_node;
 	}
 }
+
 void	pa(t_stack_node **a, t_stack_node **b, bool print)
 {
 	push(a, b);

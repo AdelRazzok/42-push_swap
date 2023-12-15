@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 13:23:13 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/12 03:29:49 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/14 18:43:53 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	ra(t_stack_node **a, bool print)
 {
 	rotate(a);
 	if (!print)
-		ft_print("ra\n");
+		ft_printf("ra\n");
 }
 
 void	rb(t_stack_node **b, bool print)
 {
 	rotate(b);
 	if (!print)
-		ft_print("rb\n");
+		ft_printf("rb\n");
 }
 
 void	rr(t_stack_node **a, t_stack_node **b, bool print)
@@ -45,7 +45,7 @@ void	rr(t_stack_node **a, t_stack_node **b, bool print)
 	rotate(a);
 	rotate(b);
 	if (!print)
-		ft_print("rr\n");
+		ft_printf("rr\n");
 }
 
 void	rotate_both(t_stack_node **a, t_stack_node **b,

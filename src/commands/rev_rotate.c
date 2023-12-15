@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:29:44 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/14 17:30:54 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/15 01:03:41 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	rev_rotate(t_stack_node **stack)
 	*stack = last_node;
 	last_node->next->prev = last_node;
 }
+
 void	rra(t_stack_node **a, bool print)
 {
 	rev_rotate(a);
@@ -45,4 +46,13 @@ void	rrr(t_stack_node **a, t_stack_node **b, bool print)
 	rev_rotate(b);
 	if (!print)
 		ft_printf("rrr\n");
+}
+
+void	rev_rotate_both(t_stack_node **a, t_stack_node **b,
+		t_stack_node *cheapest_node)
+{
+	while (*b != cheapest_node->target_node && *a != cheapest_node)
+		rrr(a, b, false);
+	current_index(*a);
+	current_index(*b);
 }

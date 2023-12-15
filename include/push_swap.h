@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 17:40:00 by arazzok           #+#    #+#             */
-/*   Updated: 2023/12/14 17:51:13 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/12/14 18:41:47 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_stack_node
 void					init_stack_a(t_stack_node **a, char **argv);
 void					prep_for_push(t_stack_node **stack,
 							t_stack_node *top_node, char stack_name);
+t_stack_node			*get_cheapest(t_stack_node *stack);
 
 // stack_utils.c
 bool					stack_sorted(t_stack_node *stack);
@@ -69,7 +70,9 @@ void					pa(t_stack_node **a, t_stack_node **b, bool print);
 void					pb(t_stack_node **b, t_stack_node **a, bool print);
 
 // swap.c
-
+void					sa(t_stack_node **a, bool print);
+void					sb(t_stack_node **b, bool print);
+void					ss(t_stack_node **a, t_stack_node **b, bool print);
 
 // rotate.c
 void					ra(t_stack_node **a, bool print);
@@ -82,5 +85,7 @@ void					rotate_both(t_stack_node **a, t_stack_node **b,
 void					rra(t_stack_node **a, bool print);
 void					rrb(t_stack_node **b, bool print);
 void					rrr(t_stack_node **a, t_stack_node **b, bool print);
+void					rev_rotate_both(t_stack_node **a, t_stack_node **b,
+							t_stack_node *cheapest_node);
 
 #endif
